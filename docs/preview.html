@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family:"Microsoft YaHei","PingFang SC",sans-serif; }
+  body { background:#E8EDF7; padding:36px 28px; display:flex; gap:30px; justify-content:center; }
+  .phone { width:356px; height:724px; background:#F5F7FB; border-radius:36px; border:10px solid #1F2537; overflow:hidden; display:flex; flex-direction:column; box-shadow:0 18px 40px rgba(31,37,55,.25); }
+  .navbar { background:#4F7CFF; color:#fff; text-align:center; font-size:15px; font-weight:600; padding:16px 0 12px; flex-shrink:0; }
+  .body { flex:1; overflow:hidden; padding:12px 12px 0; }
+  .tabbar { flex-shrink:0; background:#fff; display:flex; border-top:1px solid #E8ECF3; }
+  .tab { flex:1; text-align:center; font-size:10px; color:#8A94A6; padding:6px 0 8px; }
+  .tab .ic { font-size:18px; display:block; }
+  .tab.on { color:#4F7CFF; font-weight:600; }
+  .card { background:#fff; border-radius:12px; padding:14px; margin-bottom:10px; box-shadow:0 2px 8px rgba(43,49,69,.05); }
+  .muted { color:#8A94A6; font-size:11px; }
+  .btn { display:inline-block; background:#4F7CFF; color:#fff; border-radius:20px; font-size:12px; padding:7px 18px; }
+  .ghost { background:#EEF3FF; color:#4F7CFF; }
+  .warn { background:#FF6B6B; }
+
+  /* phone1 打卡 */
+  .pbar { height:9px; background:#EEF1F7; border-radius:5px; margin:8px 0 6px; }
+  .pfill { height:100%; width:40%; border-radius:5px; background:linear-gradient(90deg,#4F7CFF,#6BD5C9); }
+  .dayhead { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+  .daynum { background:#4F7CFF; color:#fff; font-size:10px; padding:3px 9px; border-radius:6px; white-space:nowrap; }
+  .daytitle { font-size:12.5px; font-weight:600; }
+  .task { font-size:11px; color:#5A6275; line-height:1.55; }
+  .dayfoot { display:flex; justify-content:space-between; align-items:center; margin-top:8px; }
+  .ck { font-size:11px; padding:4px 16px; border-radius:14px; background:#EEF3FF; color:#4F7CFF; }
+  .ck.done { background:#E6F7F0; color:#19A97B; }
+
+  /* phone2 网格 */
+  .tabs { display:flex; background:#fff; border-radius:10px; overflow:hidden; margin-bottom:10px; }
+  .t { flex:1; text-align:center; padding:10px 0; font-size:13px; color:#5A6275; }
+  .t.on { background:#EEF3FF; color:#4F7CFF; font-weight:600; }
+  .glabel { font-size:11px; color:#8A94A6; margin:2px 2px 6px; }
+  .grid { display:flex; flex-wrap:wrap; gap:8px; }
+  .cell { width:31.5%; background:#fff; border-radius:10px; text-align:center; padding:13px 0 10px; box-shadow:0 2px 8px rgba(43,49,69,.05); }
+  .sym { font-size:21px; font-weight:600; color:#2B3145; }
+  .cell .muted { font-size:9px; }
+
+  /* phone3 详情 */
+  .hero { text-align:center; padding:20px 14px 14px; }
+  .big { font-size:52px; font-weight:700; color:#4F7CFF; }
+  .word { display:flex; align-items:center; padding:8px 2px; border-bottom:1px solid #F0F2F7; font-size:12px; }
+  .word:last-child { border:0; }
+  .ww { width:78px; font-weight:600; font-size:13px; }
+  .wp { flex:1; color:#4F7CFF; }
+  .wc { color:#8A94A6; font-size:10.5px; }
+
+  /* phone4 测验 */
+  .ctr { text-align:center; }
+  .bigword { font-size:40px; font-weight:700; margin:14px 0 4px; }
+  .ipa { display:inline-block; font-size:20px; color:#4F7CFF; background:#EEF3FF; border-radius:8px; padding:8px 16px; margin:10px 0; }
+  .row { display:flex; gap:10px; justify-content:center; margin-top:12px; }
+</style>
+</head>
+<body>
+
+<!-- 手机1：学习计划 -->
+<div class="phone">
+  <div class="navbar">国际音标学习</div>
+  <div class="body">
+    <div class="card">
+      <div style="font-size:14px;font-weight:600;">📚 15 天音标打卡计划</div>
+      <div class="muted" style="margin-top:3px;">每天 40–60 分钟 · 共 2–3 周 · 掌握 48 个国际音标</div>
+      <div class="pbar"><div class="pfill"></div></div>
+      <div class="muted">已完成 40%（15 天计划）</div>
+    </div>
+    <div class="card">
+      <div class="dayhead"><span class="daynum">Day 1</span><span class="daytitle">前元音：i: / ɪ / e / æ</span></div>
+      <div class="task">学习 4 个前元音的发音要领与口型；每个音标跟读 5 个例词各 10 遍；用镜子检查口型。</div>
+      <div class="dayfoot"><span class="muted">⏱ 40-50 分钟</span><span class="ck done">✓ 已打卡</span></div>
+    </div>
+    <div class="card">
+      <div class="dayhead"><span class="daynum">Day 2</span><span class="daytitle">后元音：ɑ: / ɒ / ɔ: / ʊ / u:</span></div>
+      <div class="task">学习 5 个后元音；重点区分圆唇与不圆唇；跟读例词并录音自检。</div>
+      <div class="dayfoot"><span class="muted">⏱ 45-60 分钟</span><span class="ck done">✓ 已打卡</span></div>
+    </div>
+    <div class="card">
+      <div class="dayhead"><span class="daynum">Day 3</span><span class="daytitle">中元音：ʌ / ɜ: / ə</span></div>
+      <div class="task">学习 3 个中元音；体会央元音 /ə/ 的放松感。</div>
+      <div class="dayfoot"><span class="muted">⏱ 40-50 分钟</span><span class="ck">打卡</span></div>
+    </div>
+    <div class="card">
+      <div style="font-size:13px;font-weight:600;margin-bottom:4px;">🎯 完成标志</div>
+      <div class="task">· 拿到任意标注音标的生词，能独立、准确读出<br>· 录音自检时，能听出自己与示范读音的差别</div>
+    </div>
+  </div>
+  <div class="tabbar">
+    <div class="tab on"><span class="ic">📅</span>学习计划</div>
+    <div class="tab"><span class="ic">🔊</span>音标学习</div>
+    <div class="tab"><span class="ic">🎤</span>跟读练习</div>
+    <div class="tab"><span class="ic">📝</span>音标测验</div>
+  </div>
+</div>
+
+<!-- 手机2：音标学习 -->
+<div class="phone">
+  <div class="navbar">音标学习</div>
+  <div class="body">
+    <div class="tabs"><div class="t on">元音 (20)</div><div class="t">辅音 (28)</div></div>
+    <div class="glabel">长元音</div>
+    <div class="grid">
+      <div class="cell"><div class="sym">i:</div><div class="muted">长元音</div></div>
+      <div class="cell"><div class="sym">ɑ:</div><div class="muted">长元音</div></div>
+      <div class="cell"><div class="sym">ɔ:</div><div class="muted">长元音</div></div>
+      <div class="cell"><div class="sym">u:</div><div class="muted">长元音</div></div>
+      <div class="cell"><div class="sym">ɜ:</div><div class="muted">长元音</div></div>
+      <div class="cell"><div class="sym">…</div><div class="muted">共 5 个</div></div>
+    </div>
+    <div class="glabel" style="margin-top:12px;">短元音</div>
+    <div class="grid">
+      <div class="cell"><div class="sym">ɪ</div><div class="muted">短元音</div></div>
+      <div class="cell"><div class="sym">e</div><div class="muted">短元音</div></div>
+      <div class="cell"><div class="sym">æ</div><div class="muted">短元音</div></div>
+      <div class="cell"><div class="sym">ʌ</div><div class="muted">短元音</div></div>
+      <div class="cell"><div class="sym">ɒ</div><div class="muted">短元音</div></div>
+      <div class="cell"><div class="sym">ʊ</div><div class="muted">短元音</div></div>
+      <div class="cell"><div class="sym">ə</div><div class="muted">央元音</div></div>
+    </div>
+    <div class="glabel" style="margin-top:12px;">双元音</div>
+    <div class="grid">
+      <div class="cell"><div class="sym">eɪ</div><div class="muted">双元音</div></div>
+      <div class="cell"><div class="sym">aɪ</div><div class="muted">双元音</div></div>
+      <div class="cell"><div class="sym">ɔɪ</div><div class="muted">双元音</div></div>
+    </div>
+    <div class="card" style="margin-top:12px;">
+      <div class="task">💡 点击任意音标卡片进入详情：查看发音要领、口型说明、5 个例词，并可跟读录音。</div>
+    </div>
+  </div>
+  <div class="tabbar">
+    <div class="tab"><span class="ic">📅</span>学习计划</div>
+    <div class="tab on"><span class="ic">🔊</span>音标学习</div>
+    <div class="tab"><span class="ic">🎤</span>跟读练习</div>
+    <div class="tab"><span class="ic">📝</span>音标测验</div>
+  </div>
+</div>
+
+<!-- 手机3：音标详情 -->
+<div class="phone">
+  <div class="navbar">i: 音标详情</div>
+  <div class="body">
+    <div class="card hero">
+      <div class="big">i:</div>
+      <div class="muted">长元音</div>
+      <div style="margin-top:10px;"><span class="btn">▶ 播放示范</span></div>
+    </div>
+    <div class="card">
+      <div style="font-size:13px;font-weight:600;margin-bottom:5px;">🗣 发音要领</div>
+      <div class="task">嘴角向两边咧开，像微笑，舌尖抵下齿，声带振动，音要拉长。</div>
+      <div style="font-size:13px;font-weight:600;margin:10px 0 5px;">👄 口型说明</div>
+      <div class="task">口型扁平，上下齿几乎合拢，嘴唇不圆。</div>
+    </div>
+    <div class="card">
+      <div style="font-size:13px;font-weight:600;margin-bottom:5px;">🎤 跟读录音对比</div>
+      <div class="muted">先听示范 → 点「开始录音」朗读 → 播放自己的录音对比差别</div>
+      <div class="row" style="justify-content:flex-start;">
+        <span class="btn">● 开始录音</span>
+        <span class="btn ghost">🔊 播放我的录音</span>
+      </div>
+    </div>
+    <div class="card">
+      <div style="font-size:13px;font-weight:600;margin-bottom:4px;">📖 5 个例词（点击可播示范）</div>
+      <div class="word"><span class="ww">see</span><span class="wp">/si:/</span><span class="wc">看见</span></div>
+      <div class="word"><span class="ww">meet</span><span class="wp">/mi:t/</span><span class="wc">遇见</span></div>
+      <div class="word"><span class="ww">read</span><span class="wp">/ri:d/</span><span class="wc">读</span></div>
+      <div class="word"><span class="ww">green</span><span class="wp">/ɡri:n/</span><span class="wc">绿色</span></div>
+      <div class="word"><span class="ww">team</span><span class="wp">/ti:m/</span><span class="wc">队伍</span></div>
+    </div>
+  </div>
+  <div class="tabbar">
+    <div class="tab"><span class="ic">📅</span>学习计划</div>
+    <div class="tab"><span class="ic">🔊</span>音标学习</div>
+    <div class="tab"><span class="ic">🎤</span>跟读练习</div>
+    <div class="tab"><span class="ic">📝</span>音标测验</div>
+  </div>
+</div>
+
+<!-- 手机4：音标测验 -->
+<div class="phone">
+  <div class="navbar">音标测验</div>
+  <div class="body">
+    <div class="card ctr">
+      <div class="muted">第 3 / 10 题 · 正确 2 · 出错 0</div>
+      <div class="bigword">bread</div>
+      <div class="muted">（面包）</div>
+      <div class="ipa">/bred/</div>
+      <div class="row">
+        <span class="btn ghost">👁 看音标</span>
+        <span class="btn ghost">▶ 听示范</span>
+      </div>
+      <div class="muted" style="margin-top:12px;">先独立读出来，再录音对比验证</div>
+      <div class="row">
+        <span class="btn">● 录音自检</span>
+        <span class="btn ghost">🔊 回放</span>
+      </div>
+      <div class="row" style="margin-top:20px;">
+        <span class="btn">✓ 我读对了</span>
+        <span class="btn warn">✗ 没读好</span>
+      </div>
+    </div>
+    <div class="card ctr" style="margin-top:14px;">
+      <div class="muted">历史最好成绩：<span style="color:#4F7CFF;font-size:18px;font-weight:700;">90</span> 分</div>
+    </div>
+    <div class="card">
+      <div style="font-size:13px;font-weight:600;margin-bottom:4px;">🎯 完成标志</div>
+      <div class="task">连续 10 词正确率 ≥ 90%，即视为拿到任意标注音标的生词都能独立、准确读出。</div>
+    </div>
+  </div>
+  <div class="tabbar">
+    <div class="tab"><span class="ic">📅</span>学习计划</div>
+    <div class="tab"><span class="ic">🔊</span>音标学习</div>
+    <div class="tab"><span class="ic">🎤</span>跟读练习</div>
+    <div class="tab on"><span class="ic">📝</span>音标测验</div>
+  </div>
+</div>
+
+</body>
+</html>
