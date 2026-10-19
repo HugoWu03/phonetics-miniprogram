@@ -1,0 +1,43 @@
+page {
+  background: #F5F7FB;
+  font-size: 28rpx;
+  color: #2B3145;
+}
+
+.card {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 28rpx;
+  margin: 20rpx 24rpx;
+  box-shadow: 0 4rpx 16rpx rgba(43, 49, 69, 0.06);
+}
+
+.btn {
+  background: #4F7CFF;
+  color: #fff;
+  border-radius: 44rpx;
+  font-size: 30rpx;
+  padding: 4rpx 0;
+}
+.btn::after { border: none; }
+.btn-ghost {
+  background: #EEF3FF;
+  color: #4F7CFF;
+  border-radius: 44rpx;
+  font-size: 30rpx;
+}
+.btn-ghost::after { border: none; }
+.btn-warn {
+  background: #FF6B6B;
+  color: #fff;
+  border-radius: 44rpx;
+  font-size: 30rpx;
+}
+.btn-warn::after { border: none; }
+
+.title {
+  font-size: 34rpx;
+  font-weight: 600;
+  margin-bottom: 16rpx;
+}
+.muted { color: #8A94A6; font-size: 24rpx; }

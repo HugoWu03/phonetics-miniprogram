@@ -1,0 +1,18 @@
+<view class="tabs">
+  <view class="tab {{tab === 'vowel' ? 'active' : ''}}" bindtap="switchTab" data-tab="vowel">元音 (20)</view>
+  <view class="tab {{tab === 'consonant' ? 'active' : ''}}" bindtap="switchTab" data-tab="consonant">辅音 (28)</view>
+</view>
+
+<view class="group" wx:for="{{currentGroups}}" wx:for-item="g" wx:key="key" wx:for-index="gi">
+  <view class="group-label">{{g.label}}</view>
+  <view class="grid">
+    <view class="cell" wx:for="{{g.items}}" wx:key="sym" bindtap="goDetail" data-sym="{{item.sym}}">
+      <view class="sym">{{item.sym}}</view>
+      <view class="muted">{{item.name}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="tip card">
+  💡 点击任意音标卡片进入详情：查看发音要领、口型说明、5 个例词，并可跟读录音。
+</view>

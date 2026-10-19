@@ -1,0 +1,42 @@
+<view wx:if="{{p}}">
+  <view class="hero card">
+    <view class="big-sym">{{p.sym}}</view>
+    <view class="muted">{{p.name}}</view>
+    <view class="hero-btns">
+      <button class="btn" size="mini" bindtap="onPlayDemo">▶ 播放示范</button>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="title">🗣 发音要领</view>
+    <view class="text">{{p.tips}}</view>
+    <view class="title mt">👄 口型说明</view>
+    <view class="text">{{p.mouth}}</view>
+  </view>
+
+  <view class="card">
+    <view class="title">🎤 跟读录音对比</view>
+    <view class="muted">先听示范 → 点「开始录音」朗读 → 播放自己的录音对比差别</view>
+    <view class="rec-btns">
+      <button class="{{recState === 'recording' ? 'btn-warn' : 'btn'}}" size="mini"
+              bindtap="onStartRecord">
+        {{recState === 'recording' ? '■ 停止录音' : '● 开始录音'}}
+      </button>
+      <button class="btn-ghost" size="mini" bindtap="onPlayRecord">🔊 播放我的录音</button>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="title">📖 5 个例词（点击可播示范）</view>
+    <view class="word" wx:for="{{p.examples}}" wx:key="w" bindtap="onExampleDemo" data-word="{{item.w}}">
+      <view class="word-w">{{item.w}}</view>
+      <view class="word-p">{{item.p}}</view>
+      <view class="word-c">{{item.c}}</view>
+    </view>
+  </view>
+
+  <view class="nav-btns">
+    <button class="btn-ghost" size="mini" bindtap="onPrev">← {{prevSym}}</button>
+    <button class="btn" size="mini" bindtap="onNext">{{nextSym}} →</button>
+  </view>
+</view>

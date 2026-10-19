@@ -1,0 +1,45 @@
+.header { padding: 32rpx 28rpx; }
+.progress-bar {
+  height: 16rpx;
+  background: #EEF1F7;
+  border-radius: 8rpx;
+  margin: 20rpx 0 10rpx;
+  overflow: hidden;
+}
+.progress-inner {
+  height: 100%;
+  background: linear-gradient(90deg, #4F7CFF, #6BD5C9);
+  border-radius: 8rpx;
+  transition: width .3s;
+}
+.day-card { padding: 24rpx 28rpx; }
+.day-head { display: flex; align-items: center; margin-bottom: 12rpx; }
+.day-num {
+  background: #4F7CFF;
+  color: #fff;
+  font-size: 22rpx;
+  padding: 6rpx 16rpx;
+  border-radius: 10rpx;
+  margin-right: 16rpx;
+  flex-shrink: 0;
+}
+.day-title { font-size: 30rpx; font-weight: 600; }
+.task { font-size: 26rpx; color: #5A6275; line-height: 1.6; }
+.day-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16rpx;
+}
+.checkin {
+  background: #EEF3FF;
+  color: #4F7CFF;
+  font-size: 24rpx;
+  padding: 8rpx 28rpx;
+  border-radius: 26rpx;
+}
+.checkin.done { background: #E6F7F0; color: #19A97B; }
+.line { font-size: 26rpx; color: #5A6275; line-height: 1.8; }
+.kw { color: #4F7CFF; font-weight: 600; }
+.res { margin-bottom: 16rpx; }
+.res-name { font-size: 28rpx; font-weight: 500; }

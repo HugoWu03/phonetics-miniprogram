@@ -1,0 +1,48 @@
+<view wx:if="{{mode === 'start'}}" class="card center">
+  <view class="title big">🎲 音标测验</view>
+  <view class="muted">随机出示 {{quizSize || 10}} 个标注音标的生词，</view>
+  <view class="muted">先自己独立读出来，再对照音标与示范判断是否读对。</view>
+  <view class="muted best">历史最好成绩：{{best}} 分</view>
+  <button class="btn start-btn" bindtap="start">开始测验</button>
+</view>
+
+<view wx:if="{{mode === 'playing'}}" class="card center">
+  <view class="muted">第 {{idx + 1}} / {{words.length}} 题 · 正确 {{right}} · 出错 {{wrong}}</view>
+  <view class="big-word">{{cur.w}}</view>
+  <view class="meaning">（{{cur.c}}）</view>
+
+  <view class="ipa-box" wx:if="{{cur.showIpa}}">{{cur.p}}</view>
+  <view class="btns">
+    <button class="btn-ghost" size="mini" bindtap="onShowIpa">👁 看音标</button>
+    <button class="btn-ghost" size="mini" bindtap="onPlayDemo">▶ 听示范</button>
+  </view>
+
+  <view class="muted rec-tip">先独立读出来，再录音对比验证</view>
+  <view class="btns">
+    <button class="{{recState === 'recording' ? 'btn-warn' : 'btn'}}" size="mini"
+            bindtap="onStartRecord">
+      {{recState === 'recording' ? '■ 停止' : '● 录音自检'}}
+    </button>
+    <button class="btn-ghost" size="mini" bindtap="onPlayRecord">🔊 回放</button>
+  </view>
+
+  <view class="btns judge">
+    <button class="btn" size="mini" bindtap="answer" data-ok="1">✓ 我读对了</button>
+    <button class="btn-warn" size="mini" bindtap="answer" data-ok="0">✗ 没读好</button>
+  </view>
+</view>
+
+<view wx:if="{{mode === 'result'}}" class="card center">
+  <view class="title big">测验完成！</view>
+  <view class="score">{{right}} / {{words.length}}</view>
+  <view class="muted">正确率 {{right / words.length * 100}}%</view>
+  <view class="muted best">历史最好成绩：{{best}} 分</view>
+  <view class="pass" wx:if="{{right / words.length >= 0.9}}">
+    🎉 正确率 ≥ 90%，达成完成标志：拿到任意标注音标的生词都能独立、准确读出！
+  </view>
+  <view class="pass warn" wx:else>
+    距离完成标志（正确率 ≥ 90%）还有差距，建议回到「跟读练习」重点打磨错词。
+  </view>
+  <button class="btn start-btn" bindtap="start">再来一轮</button>
+  <button class="btn-ghost start-btn" bindtap="backHome">返回</button>
+</view>

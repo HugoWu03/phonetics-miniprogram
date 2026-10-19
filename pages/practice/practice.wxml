@@ -1,0 +1,29 @@
+<view class="head muted">
+  随机音标跟读：听示范 → 自己读 → 录音对比 → 听出差别再过关
+</view>
+
+<view wx:if="{{p}}" class="card center">
+  <view class="big-sym">{{p.sym}}</view>
+  <view class="muted">{{p.name}}</view>
+  <view class="mouth">{{p.mouth}}</view>
+  <view class="btns">
+    <button class="btn" size="mini" bindtap="onPlayDemo">▶ 听示范</button>
+    <button class="{{recState === 'recording' ? 'btn-warn' : 'btn'}}" size="mini"
+            bindtap="onStartRecord">
+      {{recState === 'recording' ? '■ 停止' : '● 录音'}}
+    </button>
+    <button class="btn-ghost" size="mini" bindtap="onPlayRecord">🔊 我的录音</button>
+  </view>
+  <button class="btn done-btn" bindtap="onDone">✓ 读准了，下一个</button>
+</view>
+
+<view class="card center">
+  <view class="muted">累计跟读过关：<text class="num">{{history}}</text> 次</view>
+</view>
+
+<view class="card">
+  <view class="title">🎵 自检方法（三步听差法）</view>
+  <view class="line">1. 播示范 → 播自己录音，先整体听一遍；</view>
+  <view class="line">2. 只对比口型动作：示范的唇形/舌位和你一样吗？</view>
+  <view class="line">3. 找出差别（如长短音、清浊、圆唇），再录一次直到听不出差别。</view>
+</view>

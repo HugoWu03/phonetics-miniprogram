@@ -1,0 +1,12 @@
+# 微信开发者工具自动生成的本机配置，不随项目分发
+project.private.config.json
+
+# 工具脚本清单（可由 utils/data.js 重新导出）
+audio_manifest.json
+
+# 通用
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+node_modules/

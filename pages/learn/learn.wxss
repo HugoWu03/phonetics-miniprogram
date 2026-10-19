@@ -1,0 +1,44 @@
+.tabs {
+  display: flex;
+  margin: 20rpx 24rpx 0;
+  background: #fff;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 22rpx 0;
+  font-size: 30rpx;
+  color: #5A6275;
+}
+.tab.active {
+  color: #4F7CFF;
+  font-weight: 600;
+  background: #EEF3FF;
+}
+.group { margin: 24rpx 24rpx 0; }
+.group-label {
+  font-size: 26rpx;
+  color: #8A94A6;
+  margin-bottom: 12rpx;
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+.cell {
+  width: calc((100% - 32rpx) / 3);
+  background: #fff;
+  border-radius: 16rpx;
+  text-align: center;
+  padding: 24rpx 0;
+  box-shadow: 0 4rpx 16rpx rgba(43, 49, 69, 0.06);
+}
+.sym {
+  font-size: 44rpx;
+  font-weight: 600;
+  color: #2B3145;
+}
+.tip { margin-top: 28rpx; }

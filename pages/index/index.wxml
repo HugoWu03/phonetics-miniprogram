@@ -1,0 +1,43 @@
+<view class="header card">
+  <view class="title">📚 15 天音标打卡计划</view>
+  <view class="muted">每天 40–60 分钟 · 共 2–3 周 · 掌握 48 个国际音标</view>
+  <view class="progress-bar">
+    <view class="progress-inner" style="width: {{progress}}%"></view>
+  </view>
+  <view class="muted">已完成 {{progress}}%（{{plan.length}} 天计划）</view>
+</view>
+
+<view class="card day-card" wx:for="{{plan}}" wx:key="day">
+  <view class="day-head" bindtap="goDetail" data-index="{{index}}">
+    <view class="day-num">Day {{item.day}}</view>
+    <view class="day-title">{{item.title}}</view>
+  </view>
+  <view class="task">{{item.task}}</view>
+  <view class="day-foot">
+    <text class="muted">⏱ {{item.mins}} 分钟</text>
+    <view class="checkin {{checkins[item.day] ? 'done' : ''}}" bindtap="onCheckin" data-day="{{item.day}}">
+      {{checkins[item.day] ? '✓ 已打卡' : '打卡'}}
+    </view>
+  </view>
+</view>
+
+<view class="card">
+  <view class="title">🎯 完成标志</view>
+  <view class="line">· 拿到任意标注音标的生词，能独立、准确读出</view>
+  <view class="line">· 录音自检时，能听出自己与示范读音的差别</view>
+</view>
+
+<view class="card">
+  <view class="title">📖 推荐资源</view>
+  <view class="res" wx:for="{{resources}}" wx:key="name">
+    <view class="res-name">{{item.name}}</view>
+    <view class="muted">{{item.desc}}</view>
+  </view>
+</view>
+
+<view class="card">
+  <view class="title">💡 三个基本概念</view>
+  <view class="line"><text class="kw">重音</text>：多音节词中有重读音节，读得更响、更长，如 ˈteacher。</view>
+  <view class="line"><text class="kw">连读</text>：前词辅音结尾 + 后词元音开头时连起来读，如 not at all → no-ta-tall。</view>
+  <view class="line"><text class="kw">吞音</text>：爆破音在闭塞位置失去爆破，如 goo(d) morning、si(t) down。</view>
+</view>
